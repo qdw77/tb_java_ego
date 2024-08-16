@@ -59,6 +59,7 @@ public class MainController {
 
 		}
 	 */
+
 	/*	@RequestMapping("/test.do")
 	public ModelAndView test(@RequestParam HashMap<String, Object> paramMap,
 			@RequestHeader String name, 
@@ -80,8 +81,8 @@ public class MainController {
 		List<HashMap<String, Object>> scorelist = mainService.selectStudentScore();
 		System.out.println(2);
 		mv.addObject("list", scorelist);
-		return mv;
 
+		return mv;
 	}
 
 	@RequestMapping("/sessionTest.do")
@@ -118,22 +119,25 @@ public class MainController {
 	public ModelAndView mair(HttpServletResponse response) throws UnsupportedEncodingException {
 		//Cookie cookie = new Cookie("message","from_main");
 		ModelAndView mv = new ModelAndView("main");
-				
+
 		Cookie cookie = new Cookie("message", URLEncoder.encode("from main", "UTF-8"));
 		response.addCookie(cookie);
 		return mv;
 	}
 
-	@RequestMapping("/getCookie.do")
-	public ModelAndView getCookie(@CookieValue(value="message", required=false) Cookie cookie) throws UnsupportedEncodingException {
-		ModelAndView mv = new ModelAndView("main");
+//	@RequestMapping("/getCookie.do")
+//	public ModelAndView getCookie(@CookieValue(value="message", required=false) Cookie cookie) throws UnsupportedEncodingException {
+//		ModelAndView mv = new ModelAndView("main");
+//
+//		if(cookie !=null) {
+//			String value = cookie.getValue();
+//			System.out.println("cookie message : " + URLDecoder.decode(value, "UTF-8"));
+//		}
+//
+//		return mv;
+//
+//	}
 
-		if(cookie !=null) {
-			String value = cookie.getValue();
-			System.out.println("cookie message : " + URLDecoder.decode(value, "UTF-8"));
-		}
-
-		return mv;
-
-	}
+	//	System.out.println("1");
+	//	한줄 씩 일일히 확인
 }
