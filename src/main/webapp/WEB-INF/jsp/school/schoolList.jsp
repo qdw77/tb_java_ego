@@ -18,8 +18,7 @@
 		</tr>
 		<c:forEach var="school" items="${schoolList }">
 			<tr>
-				<td style="border: 1px solid #444444;"><a
-					href="/school/getSchoolInfo.do?schoolIdx=${school.schoolId}">${school.schoolName }</a></td>
+				<td style="border: 1px solid #444444;"><a href="/school/getSchoolInfo.do?schoolIdx=${school.schoolId}">${school.schoolName }</a></td>
 				<td style="border: 1px solid #444444;">${school.schoolArea }</td>
 				<td style="border: 1px solid #444444;">${school.schoolAddr }</td>
 				<td style="border: 1px solid #444444;">${school.schoolPhone }</td>
