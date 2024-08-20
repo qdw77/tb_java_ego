@@ -42,7 +42,16 @@
                 <prop key="org.springframework.security.AccessDeniedException">cmmn/egovError</prop>
             </props>
         </property>
-    </bean>   
+    </bean> 
+    
+   <!--  JSON 설정 -->
+   <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+   	<property name="order" value="0"/>  
+   </bean>
+   <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+   	<property name="contentType" value="application/json;charset=UTF-8"> </property>
+   </bean>
+      
     <!-- tiles 설정 -->    
 	<bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 	    	<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>

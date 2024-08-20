@@ -22,22 +22,62 @@ public class SchoolController {
 	
 	@RequestMapping("/school/getSchoolList.do")
 	public String getSchoolList(Model model) {
-		
+		System.out.println(0);
 		List<HashMap<String, Object>> list = schoolService.selectSchoolList();
 		model.addAttribute("schoolList",list);
-		
+		System.out.println(1);
 		/* return "jsp경로"; */
 		return "school/schoolList";
 	}
 	
-	@RequestMapping("/school/getSchoolInfo.do")
-	public ModelAndView getSchoolInfo(@RequestParam(name="schoolIdx") int schoolIdx) {
-		ModelAndView mv = new ModelAndView("school/schoolInfo");
-		
-		HashMap<String, Object> schoolInfo = schoolService.selectSchoolInfo(schoolIdx);
-		mv.addObject("schoolInfo", schoolInfo);
-		
-		return mv;
-	}
+//	@RequestMapping("/school/getSchoolInfo.do")
+//	public ModelAndView getSchoolInfo(@RequestParam(name="schoolIdx") int schoolIdx) {
+//		ModelAndView mv = new ModelAndView("school/schoolInfo");
+//		
+//		HashMap<String, Object> schoolInfo = schoolService.selectSchoolInfo(schoolIdx);
+//		mv.addObject("schoolInfo", schoolInfo);
+//		
+//		return mv;
+//	}
+	
+//	@RequestMapping("/school/getSchoolInfo.do")
+//	public ModelAndView getSchoolInfo(@RequestParam(name="schoolIdx") int schoolIdx) {
+//		ModelAndView mv = new ModelAndView();
+//		
+//		HashMap<String, Object> schoolInfo = schoolService.selectSchoolInfo(schoolIdx);
+//		mv.addObject("schoolInfo", schoolInfo);
+//		
+//		mv.setViewName("jsonView");
+//		return mv;
+//	}
+	
+	
+//	  @RequestMapping("/school/getSchoolInfo.do") 
+//	  public ModelAndView getSchoolInfo(@RequestParam HashMap<String, Object> paramMap) { 
+//		ModelAndView mv = new ModelAndView();
+//	  
+//	  int schoolIdx = Integer.parseInt(paramMap.get("schoolId").toString());
+//	  HashMap<String, Object> schoolInfo = schoolService.selectSchoolInfo(schoolIdx);
+//	  schoolService.selectSchoolInfo(schoolIdx); 
+//	  mv.addObject("schoolInfo", schoolInfo);
+//	  
+//	  mv.setViewName("jsonView"); 
+//	  return mv; 
+//	  }
+	  
+	  @RequestMapping("/school/insertSchoolInfo.do")
+	  public ModelAndView insertSchoolInfo(@RequestParam HashMap<String, Object> paramMap) {
+		  ModelAndView mv = new ModelAndView();
+		  
+		  int resultChk = 0;
+		  resultChk = schoolService.insertSchoolInfo(paramMap);
+		  
+		  mv.addObject("resultChk", resultChk);
+		  mv.setViewName("jsonView");
+		  
+		  return mv;
+		  
+	  }
+	 
 	
 }
