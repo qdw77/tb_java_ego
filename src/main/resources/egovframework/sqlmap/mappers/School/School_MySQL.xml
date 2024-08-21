@@ -22,5 +22,21 @@
 <!-- 	where school_id = #{파라미터명} -->
 		where school_id = #{schoolIdx}
 	</select>
+	
+	<insert id="insertSchoolInfo" parameterType="java.util.HashMap">
+		
+		insert into tb_school_info(
+		school_name,
+        school_area,
+        school_addr,
+        school_phone
+        ) values (
+			#{schoolName},
+            #{schoolArea},
+            #{schoolAddr},
+            #{schoolPhone}
+        )
+
+	</insert>
 
 </mapper>

@@ -49,9 +49,9 @@
   		});
   		
   	} -->
-  		
 
-  		
+
+
 <!-- 	$.ajax({
 			type : 'POST',
 			url: '/school/getSchoolInfo.do',
@@ -85,48 +85,63 @@
   		
   	}
   	-->
-  	
- <script type="text/javascript">
-  $( document ).ready(function() {
-	  $("#btn_insert").on('click', function(){
-		  fn_insertSchool();
-	  })
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#btn_insert").on('click', function() {
+			fn_insertSchool();
+		});
+
+		$("#btn_delete").on('click', function() {
+			fn_deleteSchool
+		});
+		
+		$("#schoolName").on('change', function(){
+			console.lod($("#schoolName").val());
+		}
 	});
-  
-  	function fn_insertSchool(){
-  		
-  		var frm = $("#frm").serialize();
+	/* document.ready>화면이 그려지는 순간 세팅 */
 
-  		$.ajax({
-  			type : 'POST',
-  			url : '/school/insertSchoolInfo.do',
-  			data : frm,
-  			dataType : 'json',
-  			beforeSend: function(jqXHR, settings){
-  				console.log("beforeSend");
-  			},
-  			success : function(data, textStatus, jqXHR){
-  				if(data.resultChk > 0){
-  					alert("저장되었습니다.");	
-  				}
-  				
-  			},  				
-  			error: function(jqXHR, textStatus, errorThrown){
-  				console.log("error");
-  			},
-  			complete : function(jqXHR, textStatus){
-  				console.log("complete");
-  			}
-  		});
-  	}
+	function fn_insertSchool() {
 
+		var frm = $("#frm").serialize();
+		console.log(frm);
+		$.ajax({
+			type : 'POST',
+			url : '/school/getSchoolInfo.do',
+			data : {
+				'schoolIdx' : schoolIdx
+			},
+			dataType : 'json',
+			beforeSend : function(jqXHR, settings) {
+				console.log("beforeSend");
+			},
+			success : function(data, textStatus, jqXHR) {
+				if (data.resultChk > 0) {
+					alert("저장되었습니다.");
+				}
+
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				console.log("error");
+			},
+			complete : function(jqXHR, textStatus) {
+				console.log("complete");
+			}
+		});
+		//http://localhost:8080/school/getSchoolList.do<지금까지 사이트
+	}
+
+	function fn_deleteSchool() {
+
+	}
 </script>
 
 
 </head>
 <body>
 
-<%-- 	<form id="frm" name="frm">
+	<%-- 	<form id="frm" name="frm">
 		<input type="hidden" id="schoolId" name="schoolId" value="" />
 	</form>
 	<table id="schoolTb">
@@ -181,25 +196,31 @@
 		<table>
 			<tr>
 				<th>학교명</th>
-				<td><input type="text" id="schoolName" name="schoolName" value=""/></td>
+				<td><input type="text" id="schoolName" name="schoolName"
+					value="" /></td>
 			</tr>
 			<tr>
 				<th>지역구</th>
-				<td><input type="text" id="schoolArea" name="schoolArea" value=""/></td>
+				<td><input type="text" id="schoolArea" name="schoolArea"
+					value="" /></td>
 			</tr>
 			<tr>
 				<th>주소</th>
-				<td><input type="text" id="schoolAddr" name="schoolAddr" value=""/></td>
+				<td><input type="text" id="schoolAddr" name="schoolAddr"
+					value="" /></td>
 			</tr>
 			<tr>
 				<th>연락처</th>
-				<td><input type="text" id="schoolPhone" name="schoolPhone" value=""/></td>
+				<td><input type="text" id="schoolPhone" name="schoolPhone"
+					value="" /></td>
 			</tr>
+			<!-- 통칭은 name/ id는 고유 명칭 -->
 		</table>
-	</form> 
-	
-	<input type="button" id="btn_insert" name="btn_insert" value="저장"/>
-	
+	</form>
+
+	<input type="button" id="btn_insert" name="btn_insert" value="저장" />
+	<input type="button" id="btn_delete" name="btn_delete" value="삭제"/> 
+
 	<!-- 실행링크 > http://localhost:8080/school/getSchoolList.do -->
 
 </body>
