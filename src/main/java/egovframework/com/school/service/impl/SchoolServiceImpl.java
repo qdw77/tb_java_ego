@@ -35,5 +35,11 @@ public class SchoolServiceImpl extends EgovAbstractServiceImpl implements School
 	public int insertSchoolInfo(HashMap<String, Object> paramMap){
 		return schoolDAO.insertSchoolInfo(paramMap);
 	}
+
+	@Override
+	public int deleteSchoolInfo(HashMap<String, Object> paramMap) {
+		// TODO Auto-generated method stub
+		return schoolDAO.deleteSchoolInfo(paramMap);
+	}
 	
 }

@@ -81,17 +81,18 @@ public class SchoolController {
 
 		// 항상 쿼리부터 몸에 먼저 익히고 기억하는 게 우선
 	}
-//	@RequestMapping("/school/insertSchoolInfo.do")
-//	public ModelAndView test(@RequestParam HashMap<String, Object> paramMap) {
-//		ModelAndView mv = new ModelAndView();
-//		
-//		int resultChk =0;
-//		resultChk = schoolService.insertSchoolInfo(paramMap);
-//		
-//		mv.addObject("resultChk", resultChk);
-//		mv.setViewName("jsonView");
-//		return mv;
-//	}
+	@RequestMapping("/school/deleteSchoolInfo.do")
+	public ModelAndView test(@RequestParam HashMap<String, Object> paramMap) {
+		ModelAndView mv = new ModelAndView();
+		
+		int resultChk =0;
+		resultChk = schoolService.deleteSchoolInfo(paramMap);
+		
+		mv.addObject("resultChk", resultChk);
+		mv.setViewName("jsonView");
+		return mv;
+	}
+	
 
 
 }

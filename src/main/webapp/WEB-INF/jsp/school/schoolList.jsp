@@ -93,12 +93,12 @@
 		});
 
 		$("#btn_delete").on('click', function() {
-			fn_deleteSchool
-		});
-		
-		$("#schoolName").on('change', function(){
+			fn_deleteSchool();
+		})
+
+/* 		$("#schoolName").on('change', function() {
 			console.lod($("#schoolName").val());
-		}
+		}) */
 	});
 	/* document.ready>화면이 그려지는 순간 세팅 */
 
@@ -108,10 +108,8 @@
 		console.log(frm);
 		$.ajax({
 			type : 'POST',
-			url : '/school/getSchoolInfo.do',
-			data : {
-				'schoolIdx' : schoolIdx
-			},
+			url : '/school/insertSchoolInfo.do',
+			data : frm,
 			dataType : 'json',
 			beforeSend : function(jqXHR, settings) {
 				console.log("beforeSend");
@@ -133,7 +131,29 @@
 	}
 
 	function fn_deleteSchool() {
+		var frm = $("#frm").serialize();
+		console.log(frm);
+		$.ajax({
+			type : 'POST',
+			url : '/school/deleteSchoolInfo.do',
+			data : {"schoolId": 15},
+			dataType : 'json',
+			beforeSend : function(jqXHR, settings) {
+				console.log("beforeSend");
+			},
+			success : function(data, textStatus, jqXHR) {
+				if (data.resultChk > 0) {
+					alert("삭제되었습니다.");
+				}
 
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				console.log("error");
+			},
+			complete : function(jqXHR, textStatus) {
+				console.log("complete");
+			}
+		});
 	}
 </script>
 
@@ -219,7 +239,7 @@
 	</form>
 
 	<input type="button" id="btn_insert" name="btn_insert" value="저장" />
-	<input type="button" id="btn_delete" name="btn_delete" value="삭제"/> 
+	<input type="button" id="btn_delete" name="btn_delete" value="삭제" />
 
 	<!-- 실행링크 > http://localhost:8080/school/getSchoolList.do -->
 

@@ -38,5 +38,11 @@
         )
 
 	</insert>
+	
+	<delete id="deleteSchoolInfo" parameterType="java.util.HashMap">
+	
+	delete from tb_school_info where school_id= #{schoolId}
+	
+	</delete>
 
 </mapper>

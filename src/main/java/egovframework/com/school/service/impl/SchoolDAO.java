@@ -23,5 +23,9 @@ public class SchoolDAO extends EgovAbstractMapper{
 	public int insertSchoolInfo(HashMap<String, Object> paramMap) {
 		return insert("insertSchoolInfo", paramMap);
 	}
+	
+	public int deleteSchoolInfo(HashMap<String, Object> paramMap) {
+		return delete("deleteSchoolInfo", paramMap);
+	}
 
 }
