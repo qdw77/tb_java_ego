@@ -59,9 +59,9 @@ public class SchoolController {
 	//	  int schoolIdx = Integer.parseInt(paramMap.get("schoolId").toString());
 	//	  HashMap<String, Object> schoolInfo = schoolService.selectSchoolInfo(schoolIdx);
 	//	  schoolService.selectSchoolInfo(schoolIdx); 
-	//	  mv.addObject("schoolInfo", schoolInfo);
+	//	  mv.addObject("schoolInfo", schoolInfo);<제이슨 형태로 
 	//	  
-	//	  mv.setViewName("jsonView"); 
+	//	  mv.setViewName("jsonView"); <뷰 설정
 	//	  return mv; 
 	//	  }
 

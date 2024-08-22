@@ -96,15 +96,16 @@
 			fn_deleteSchool();
 		})
 
-/* 		$("#schoolName").on('change', function() {
-			console.lod($("#schoolName").val());
-		}) */
+		/* 		$("#schoolName").on('change', function() {
+		 console.lod($("#schoolName").val());
+		 }) */
 	});
 	/* document.ready>화면이 그려지는 순간 세팅 */
 
 	function fn_insertSchool() {
 
 		var frm = $("#frm").serialize();
+		/* var frm = $("#frm")<제이슨 이름.serialize(); */
 		console.log(frm);
 		$.ajax({
 			type : 'POST',
@@ -136,7 +137,9 @@
 		$.ajax({
 			type : 'POST',
 			url : '/school/deleteSchoolInfo.do',
-			data : {"schoolId": 15},
+			data : {
+				"schoolId" : 15
+			},
 			dataType : 'json',
 			beforeSend : function(jqXHR, settings) {
 				console.log("beforeSend");
