@@ -11,6 +11,9 @@ public interface SchoolMngService {
 	public int insertSchoolMngInfo(HashMap<String, Object> paramMap);
 	
 	public int deleteSchoolMngInfo(HashMap<String, Object> paramMap);
+
+
+	public int updateSchoolMngInfo(HashMap<String,Object> paramMap);
 	
 	
 }

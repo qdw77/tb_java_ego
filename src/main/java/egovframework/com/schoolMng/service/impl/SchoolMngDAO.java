@@ -26,4 +26,9 @@ public class SchoolMngDAO extends EgovAbstractMapper{
 	public int deleteSchoolMngInfo(HashMap<String, Object> paramMap) {
 		return delete("deleteSchoolMngInfo", paramMap);
 	}
+	
+	public int updateSchoolMngInfo(HashMap<String,Object> paramMap) {
+		return update("updateSchoolMngInfo", paramMap);
+		
+	}
 }

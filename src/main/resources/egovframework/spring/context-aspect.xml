@@ -4,15 +4,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
+<!-- aop auto prox -->
 	<aop:config>
 		<aop:pointcut id="serviceMethod" expression="execution(* egovframework.com..impl.*Impl.*(..))" />
 		
-
 		<aop:aspect ref="exceptionTransfer">
 			<aop:after-throwing throwing="exception" pointcut-ref="serviceMethod" method="transfer" />
 		</aop:aspect>
 	</aop:config>
-	
+
 	<bean id="exceptionTransfer" class="egovframework.rte.fdl.cmmn.aspect.ExceptionTransfer">
 		<property name="exceptionHandlerService">
 			<list>
