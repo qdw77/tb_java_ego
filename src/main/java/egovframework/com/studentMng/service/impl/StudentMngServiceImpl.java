@@ -20,7 +20,5 @@ public class StudentMngServiceImpl extends EgovAbstractServiceImpl implements St
 	public List<HashMap<String, Object>> selectStudentMngList(){
 		return studentMngDAO.selectStudentMngList();
 	}
-	
-	
-	
+		
 }
