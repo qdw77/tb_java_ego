@@ -15,6 +15,19 @@
 		order by rnum desc
 	</select>
 	
+	<select id="selectStudentMngInfo" parameterType="int" resultType="java.util.HashMap">
+	<!--  -->
+		<!-- parameterType="java.util.HashMap" -->
+		SELECT  A.student_id AS studentId,
+				A.student_name AS studentName,
+		        A.student_graduate_yn AS graduateYn,
+		        B.school_name AS schoolName
+		FROM tb_student_info A
+		LEFT JOIN tb_school_info B
+		ON A.school_id = B.school_id
+		WHERE A.student_id = #{studentId}
+	
+	</select>
 	
 	
 </mapper>

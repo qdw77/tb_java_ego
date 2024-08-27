@@ -24,8 +24,7 @@
 
 		SELECT school_id AS schoolId,
 		school_name AS schoolName,
-		school_area AS
-		schoolArea,
+		school_area AS schoolArea,
 		school_addr AS schoolAddr,
 		school_phone AS schoolPhone
 		FROM
