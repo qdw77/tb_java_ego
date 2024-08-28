@@ -31,7 +31,7 @@
 					frm.attr("action", "/studentMng/getStudentMngList.do");
 					frm.submit();
 					
-					location.href="/studentMng/getStudentMngList.do";
+				/* 	location.href="/studentMng/getStudentMngList.do"; */
 				}
 			},
 			error : function(data, status, err) {
@@ -41,6 +41,7 @@
 		console.log(frm);
 	
 	
+
 	}
 </script>
 </head>
@@ -69,7 +70,7 @@
 			</tr>
 
 		</table>
-		<a href="java">등록</a>
+		<a href="javascript:fn_insert();">등록</a>
 	</form>
 
 
