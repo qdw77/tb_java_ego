@@ -56,9 +56,13 @@
 		WHERE school_id = #{schoolId}
 	</delete>
 
-	<!-- <update id="updateSchoolMngInfo"> update tb_school_info set school_name 
-		= #{schoolName}, school_area = #{schoolArea}, school_addr = #{schoolAddr}, 
-		school_phone = #{schoolPhone} where school_id = #{schoolId} </update> -->
+	<!-- <update id="updateSchoolMngInfo"> 
+		update tb_school_info 
+		set school_name = #{schoolName}, 
+		school_area = #{schoolArea}, 
+		school_addr = #{schoolAddr}, 
+		school_phone = #{schoolPhone} 
+		where school_id = #{schoolId} </update> -->
 
 	<update id="updateSchoolMngInfo">
 		update tb_school_info

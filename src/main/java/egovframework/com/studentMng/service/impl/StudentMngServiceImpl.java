@@ -29,4 +29,32 @@ public class StudentMngServiceImpl extends EgovAbstractServiceImpl implements St
 		return studentMngDAO.selectStudentMngInfo(schoolId);
 	}
 
+
+
+	/*
+	  @Override public List<HashMap<String, Object>> selectSchoolMngInfoList() { //
+	 TODO Auto-generated method stub return studentMngDAO.selectSchoolMngList(); }
+	
+
+	/*
+	 * @Override public int insertStudentMngInfo(HashMap<String, Object> paramMap) {
+	 * int resultChk =0; resultChk = studentMngDAO.insertStudentMngInfo(paramMap);
+	 * 
+	 * return resultChk;
+	 * 
+	 * }
+	 */
+
+
+
+	@Override
+	public int insertStudentMng(HashMap<String, Object> paramMap) {
+		// TODO Auto-generated method stub
+		
+		int resultChk =0;
+		resultChk =studentMngDAO.insertStudentMng(paramMap);
+		
+		return resultChk;
+	}
+
 }

@@ -1,10 +1,9 @@
-  <%@ page language="java" contentType="text/html; charset=UTF-8"
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
-
 
 
 <!DOCTYPE html>
@@ -17,7 +16,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
-	
+
 
 <title>student</title>
 
@@ -75,8 +74,8 @@
 </head>
 
 <body>
-	<form id="listFrm" name="listFrm" action="">	
-		<input type="hidden" id="studentId" name="studentId" value=""/>	
+	<form id="listFrm" name="listFrm" action="">
+		<input type="hidden" id="studentId" name="studentId" value="" />
 	</form>
 	<table style="border: 1px solid #444444;">
 		<thead>
@@ -91,6 +90,7 @@
 
 		</tbody>
 	</table>
+	<a href=""></a>
 </body>
 
 </html>

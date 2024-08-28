@@ -16,4 +16,13 @@ public interface StudentMngService {
 
 
 	public HashMap<String, Object> selectStudentMngInfo(int schoolId);
+
+
+	public int insertStudentMng(HashMap<String, Object> paramMap);
+	
+	/* public List<HashMap<String, Object>> selectSchoolMngInfoList(); */
+	
+
+	
+	
 }
